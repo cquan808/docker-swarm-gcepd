@@ -1,4 +1,4 @@
-# Docker Swarm Guide
+# Docker Stack Setup Guide
 
 Docker version Installed: 18.06.1
 
@@ -62,14 +62,19 @@ Example:
 
 `docker node update --label-add project=foobar foobar-worker-1`
 
-**docker-stack.yml**
+`docker node update --label-add project=foobar foobar-worker-2`
+
+**docker-stack-example.yml**
 
 ``` 
 version: '3.3'
 
 services:
-  ...
-  deploy:
+    
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4
+    ...
+    deploy:
       mode: replicated
       replicas: 1
       placement:
