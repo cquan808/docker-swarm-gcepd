@@ -2,6 +2,7 @@
 
 - Docker (version: 18.06.1)
 - Google Compute Engine 
+- Ubuntu 18.04 VM
 - Docker stack with Google Persistent Disk
 
 ## Docker Script
