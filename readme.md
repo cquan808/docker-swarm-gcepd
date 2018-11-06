@@ -1,14 +1,16 @@
-# Install Docker Script 
+# Docker Swarm Guide
 
 Docker version Installed: 18.06.1
 
-## Features Included
+## Docker Script
+
+### Docker script Features
 
 - increase virtual memory for elasticsearch
 - docker metrics setup at localhost:9323/metrics, used in Grafana
 - rexray plugin for google cloud persistent disk
 
-## Instruction
+### Install docker script
 
 Set execute permission for script:
 
@@ -18,9 +20,9 @@ Run install docker script:
 
 `./install-docker.sh`
 
-# Docker Swarm
+## Docker Swarm Setup
 
-## Initializing Docker Swarm And Add Managers/Workers
+### Initializing Docker Swarm And Add Managers/Workers
 
 On master vm:
 
@@ -40,13 +42,13 @@ Check all the nodes in the swarm:
 
 `sudo docker node ls`
 
-## Drain Manager Nodes
+### Drain Manager Nodes
 
 **Note** If you do not want service containers deployed on the manager VM, drain the manager nodes:
 
 `sudo docker node update --availability drain <manager-node-name>`
 
-## Node Label
+### Node Label
 
 Label the nodes if you want to set constraints when deploying stacks
 
