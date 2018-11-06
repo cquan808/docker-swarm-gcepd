@@ -1,8 +1,8 @@
 # GCE Docker Swarm with Persistent Disk Setup 
 
-Docker (version: 18.06.1)
-Google Compute Engine 
-Docker stack with Google Persistent Disk
+- Docker (version: 18.06.1)
+- Google Compute Engine 
+- Docker stack with Google Persistent Disk
 
 ## Docker Script
 
