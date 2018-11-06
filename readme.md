@@ -1,29 +1,19 @@
-# Install Docker 18.06.1 Script 
+# Docker Script 
 
-- copy the script below to a .sh file
-- run `sudo chmod +x <filename.sh>`
-- run `./<filename.sh>`
+Docker version Installed: 18.06.1
 
-# Script
+## Features Included
 
-#!/bin/bash
-sudo apt-get update
-sudo apt-get install -y apt-transport-https software-properties-common ca-certificates curl wget
-wget https://download.docker.com/linux/ubuntu/gpg
-sudo apt-key add gpg
-echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable" | sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt-get update
-sudo apt-get -y install docker-ce=18.06.1~ce~3-0~ubuntu
-# Increase Virtual Memory for Elasticsearch
-sudo sysctl -w vm.max_map_count=262144
-sudo -s
-sudo echo 'vm.max_map_count=262144' >> sudo /etc/sysctl.conf
-# metrics setup
-echo '{ "metrics-addr" : "0.0.0.0:9323", "experimental" : true }' >> /etc/docker/daemon.json
-sudo service docker restart
-curl localhost:9323/metrics
-# docker version installed:
-docker --version
-# install rexray-gcepd
-docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
-docker volume ls
+- increase virtual memory for elasticsearch
+- docker metrics setup at localhost:9323/metrics, used in Grafana
+- rexray plugin for google cloud persistent disk
+
+## Instruction
+
+Set execute permission for script:
+
+`sudo chmod +x install-docker.sh`
+
+Run install docker script:
+
+`./install-docker.sh`
