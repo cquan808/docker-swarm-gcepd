@@ -1,6 +1,8 @@
-# Docker Stack Setup Guide
+# GCE Docker Swarm with Persistent Disk Setup 
 
-Docker version Installed: 18.06.1
+Docker (version: 18.06.1)
+Google Compute Engine 
+Docker stack with Google Persistent Disk
 
 ## Docker Script
 
@@ -21,6 +23,9 @@ Run install docker script:
 `./install-docker.sh`
 
 ## Docker Swarm Setup
+
+- 3 Managers -> minimum for a fault tolerance of 1
+- x workers -> depends on your needs
 
 ### Initializing Docker Swarm And Add Managers/Workers
 
@@ -82,3 +87,15 @@ services:
           - node.labels.project == foobar
           - node.role == worker
 ```
+
+## Google Cloud Persistent Volume
+
+### Install Rex-Ray as Docker Plugin
+
+Needs to be install on all docker swarm nodes (install via `install-docker.sh`)
+
+Create google cloud persistent disk:
+
+`docker volume create -d rexray/gcepd:latest --name <disk-name> --opt=size=10 --opt=type=pd-standard`
+
+**Note** Size of disk must be a minimum of 10GB
