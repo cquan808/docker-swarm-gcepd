@@ -27,9 +27,11 @@ On master vm:
 `sudo docker swarm init --advertise-addr <master-vm-ip-address>`
 
 Get token for adding more managers:
+
 `sudo docker swarm join-token manager`
 
 Get token for adding workers:
+
 `sudo docker swarm join-token worker`
 
 Go to other Manager/Worker VM, run `install-docker.sh` then join swarm with token from above.
