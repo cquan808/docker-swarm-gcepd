@@ -60,6 +60,8 @@ Example:
 
 `docker node update --label-add project=foobar foobar-worker-1`
 
+**docker-stack.yml**
+
 ``` 
 version: '3.3'
 
