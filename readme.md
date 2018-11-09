@@ -15,6 +15,12 @@
 
 ### Install docker script
 
+Clone this Repo and move into folder:
+
+`git clone https://github.com/cquan808/docker-swarm-gcepd`
+
+`cd docker-swarm-gcepd`
+
 Set execute permission for script:
 
 `sudo chmod +x install-docker.sh`
