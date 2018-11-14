@@ -19,11 +19,9 @@ Clone this Repo and move into folder:
 
 `git clone https://github.com/cquan808/docker-swarm-gcepd`
 
-`cd docker-swarm-gcepd`
-
-Switch to superuser:
-
 `sudo -s`
+
+`cd docker-swarm-gcepd`
 
 Set execute permission for script:
 
