@@ -17,3 +17,4 @@ curl localhost:9323/metrics
 # install rexray-gcepd
 docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
 docker volume ls
+exit
