@@ -12,8 +12,8 @@ echo '{ "metrics-addr" : "0.0.0.0:9323", "experimental" : true }' >> /etc/docker
 sudo service docker restart
 curl localhost:9323/metrics
 # install rexray-gcepd
-docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
-docker volume ls
+sudo docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
+sudo docker volume ls
 # Increase Virtual Memory for Elasticsearch
 sudo sysctl -w vm.max_map_count=262144
 sudo echo 'vm.max_map_count=262144' >> sudo /etc/sysctl.conf
